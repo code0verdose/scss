@@ -1,0 +1,24 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+  gap: 10px 0;
+  background: #000;
+  color: white;
+  list-style-type: none;
+
+  &__item {
+    cursor: pointer;
+    padding: 10px 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    &:hover {
+      color: #000;
+      background: #FFF;
+
+    }
+  }
+}

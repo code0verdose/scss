@@ -1,0 +1,58 @@
+.burger {
+  &__list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  &__check {
+    @include burger-position;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    z-index: 100;
+    cursor: pointer;
+
+    &:checked ~ .burger__list {
+      transform: none;
+    }
+
+    &:checked ~ .burger__line {
+      background: #fff;
+      background: transparent;
+      transition: 0.3s;
+    }
+    &:checked ~ .burger__line::after {
+      background: #fff;
+      transform: rotate(-45deg) translateY(-8px);
+      transition: 0.3s;
+    }
+    &:checked ~ .burger__line::before {
+      background: #fff;
+      transform: rotate(45deg) translateY(8px);
+      transition: 0.3s;
+    }
+  }
+
+  &__line {
+    @include burger-position;
+    width: 40px;
+    height: 6px;
+    background: #000;
+    z-index: 90;
+    transition: 0.3s;
+
+    &::before {
+      @include burger-line;
+      top: 12px;
+    }
+    &::after {
+      @include burger-line;
+      top: 24px;
+    }
+  }
+}
