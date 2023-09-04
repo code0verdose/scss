@@ -5,10 +5,11 @@
 }
 
 body {
-  background: pink;
+  background: $accent-color;
 }
 
-button, input[type="button"] {
+button,
+input[type="button"] {
   border: 0;
   background: 0;
   cursor: pointer;
